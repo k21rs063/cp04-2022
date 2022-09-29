@@ -163,7 +163,13 @@
 
     // Alarmの処理
     function alarm(){
-        
+        var canvas = $("#mycanvas")[0];
+        var ctx = canvas.getContext("2d");
+        var img = new Image();
+        img.src = "ksuisbg.gif";
+        img.onroad = function(){
+            ctx.drawImage(img,0,0,300,300);
+        }
         
     }
     
@@ -182,7 +188,6 @@
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
         alarm();
-        
     }
     
  
