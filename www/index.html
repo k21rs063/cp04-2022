@@ -170,16 +170,18 @@
         var ctx = canvas.getContext("2d");
         var img = new Image();
         img.src = "ksuisbg.gif";
-        img.onroad = function(){
+        img.onload = function(){
             ctx.drawImage(img,0,0,300,300);
-        };
-        
+        }
+        var audio = new Audio();
+        audio.src = "pin.wav";
+        audio.play();
     }
     
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
-        
-        
+        active =true;
+        startTime = new Date();
     }
 
     // ButtonBがクリックされた時の処理
