@@ -29,16 +29,19 @@
       
         $('#btnA').click(function(e) {
             btnAClick(e);
+            $(btnC).prop("disabled", true);
         });
 
         $('#btnB').click(function(e) {
             btnBClick(e);
+            $(btnC).prop("disabled", false);
         });
 
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
         init();
+        btnCClick(null);
     });
     
     function rgbToColor(r,g,b){
