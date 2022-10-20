@@ -42,6 +42,10 @@
         });
         init();
         btnCClick(null);
+
+        $('#btnD').click(function(e) {
+            btnDClick(e);
+        });
     });
     
     function rgbToColor(r,g,b){
@@ -165,6 +169,7 @@
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
         
+        
     }
 
     // Alarmの処理
@@ -230,6 +235,7 @@
     <button id="btnA">開始</button>  
     <button id="btnB">停止</button>  
     <button id="btnC">時間設定</button>  
+    <button id="btnD">ラーメン用</button>
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=15 >
 </body>
