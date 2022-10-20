@@ -43,8 +43,9 @@
         init();
         btnCClick(null);
 
-        $('#btnD').click(function(e) {
+        $('#btnD').click(function(e) {// 追加機能：ラーメン用ボタン
             btnDClick(e);
+            $(btnC).prop("disabled", true);// 注：追加機能作動時はマニュアルでの時間設定を不可にしてある。解除時はこの記述を削除
         });
     });
     
@@ -168,6 +169,7 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
+        $('#btnD').prop('disabled', false);
         
         
     }
@@ -205,7 +207,15 @@
         $("#time").html("経過時間： 0");
         $("#remain").html("残り時間：" + period);
     }
-    
+    // ButtonDがクリックされたときの処理
+    function btnDClick(e){
+        active = false;
+        period = 180;
+        $("#time").html("経過時間： 0");
+        $("#remain").html("残り時間：" + period);
+
+    }
+
  
     // 繰り返し実行する処理
     function timer(){
@@ -235,8 +245,8 @@
     <button id="btnA">開始</button>  
     <button id="btnB">停止</button>  
     <button id="btnC">時間設定</button>  
-    <button id="btnD">ラーメン用</button>
+    <button id="btnD">ラーメン用3分タイマー</button>
     <input type="number" id="minute" value=0 >
-    <input type="number" id="second" value=15 >
+    <input type="number" id="second" value=0 >
 </body>
 </html>
